@@ -1,13 +1,13 @@
-name: JS
-
-on:
-  workflow_dispatch:
-
 permissions:
   checks: write
   contents: write
   packages: read
   actions: write
+name: JS
+
+on:
+  workflow_dispatch:
+
 
 jobs:
   build-and-deploy:
