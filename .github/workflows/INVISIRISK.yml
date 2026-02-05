@@ -21,10 +21,10 @@ jobs:
 
       # Setup PSE
       - name: Setup PSE
-        uses: invisirisk/pse-action@dev-test
+        uses: invisirisk/pse-action@devlop
         with:
-          api_url: "https://app.stage.invisirisk.com"
-          app_token: ${{ secrets.IR_API_KEY }}
+          api_url: "https://app.dev.invisirisk.com"
+          app_token: ${{ secrets.IR_API_KEY_TET }}
 
       # Setup Node.js
       - name: Use Node.js
@@ -40,7 +40,7 @@ jobs:
       # Cleanup PSE
       - name: Cleanup PSE
         if: always()
-        uses: invisirisk/pse-action@dev-test
+        uses: invisirisk/pse-action@devlop
         with:
           cleanup: "true"
 
@@ -51,9 +51,9 @@ jobs:
    if: always()
    steps:
    - name: Gather Status
-     uses: invisirisk/pse-action@dev-test
+     uses: invisirisk/pse-action@devlop
      with:
-      api_url: "https://app.stage.invisirisk.com"
-      app_token: ${{ secrets.IR_API_KEY }}
+      api_url: "https://app.dev.invisirisk.com"
+      app_token: ${{ secrets.IR_API_KEY_TET }}
       send_job_status: "true"
       debug: "true"
